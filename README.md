@@ -10,6 +10,11 @@ Setup instructions
     allure serve  <"allure-results path">
 5. please makesure your webdriver version and java versions are correct 
 
+Test Results Images 
+
+![image](https://user-images.githubusercontent.com/115826823/195996922-12ebdbdd-6d74-4a71-b047-a9c57a8de845.png)
+
+
 
 ![image](https://user-images.githubusercontent.com/115826823/195996880-9f358351-cc2d-4330-b7a4-7eb3f17264e4.png)
 
