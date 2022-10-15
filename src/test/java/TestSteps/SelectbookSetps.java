@@ -11,7 +11,10 @@ public class SelectbookSetps extends BaseTest {
      SelectbookPage loginpage;
      DataReader data= new DataReader();
 
-  @Test(priority = 1, description = "Add book",enabled = true)
+     public int addBookNum =3;
+     public int deleteBookNum =0;
+
+  @Test(priority = 1, description = "Add book",enabled = false)
   public void selectBook() {
       loginpage=new SelectbookPage(driver);
       loginpage.BookStorebtn.click();
@@ -19,8 +22,9 @@ public class SelectbookSetps extends BaseTest {
       loginpage.GotoBookStore(data.Username(), data.Password());
       loginpage.loginbtn.click();
       Assert.assertTrue(loginpage.logOutbtn.isDisplayed(),"User not logged in");
-      waitForElement(loginpage.bookSelect.get(1));
-      loginpage.bookSelect.get(1).click();
+      scroll();
+      waitForElement(loginpage.bookSelect.get(addBookNum));
+      loginpage.bookSelect.get(addBookNum).click();
       scroll();
       waitForElement(loginpage.addCollection);
       loginpage.addCollection.click();
@@ -33,11 +37,12 @@ public class SelectbookSetps extends BaseTest {
       Assert.assertTrue(!loginpage.bookSelect.isEmpty(),"Book Collection is empty");
 
   }
-  @Test(priority = 2, description = "Remove book",enabled = false)
+  @Test(priority = 2, description = "Remove book",enabled = true)
   public void removeBook()  {
       selectBook();
-      waitForElement(loginpage.deleteSelectedBook.get(1));
-      loginpage.deleteSelectedBook.get(1).click();
+      scroll();
+      waitForElement(loginpage.deleteSelectedBook.get(deleteBookNum));
+      loginpage.deleteSelectedBook.get(deleteBookNum).click();
       waitForElement(loginpage.confirmdelete);
       loginpage.confirmdelete.click();
       waitForAlert();
