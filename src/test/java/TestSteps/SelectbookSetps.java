@@ -11,7 +11,7 @@ public class SelectbookSetps extends BaseTest {
      SelectbookPage loginpage;
      DataReader data= new DataReader();
 
-  @Test(priority = 1, description = "Add book",enabled = false)
+  @Test(priority = 1, description = "Add book",enabled = true)
   public void selectBook() {
       loginpage=new SelectbookPage(driver);
       loginpage.BookStorebtn.click();
@@ -33,7 +33,7 @@ public class SelectbookSetps extends BaseTest {
       Assert.assertTrue(!loginpage.bookSelect.isEmpty(),"Book Collection is empty");
 
   }
-  @Test(priority = 2, description = "Remove book",enabled = true)
+  @Test(priority = 2, description = "Remove book",enabled = false)
   public void removeBook()  {
       selectBook();
       waitForElement(loginpage.deleteSelectedBook.get(1));
